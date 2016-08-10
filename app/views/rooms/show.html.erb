@@ -1,0 +1,12 @@
+<p>
+  <strong>Name:</strong>
+  <%= @room.name %>
+</p>
+
+
+
+<div id="messages">
+	<%= render @messages %>
+</div>
+
+<%= render partial: "/messages/form", locals: {room: @room, message: @message} %>

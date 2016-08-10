@@ -1,0 +1,20 @@
+<div class="topbar">
+	<h1 class="topbar__header">Welcome to Birdhouse!</h1>
+</div>
+<% if notice %>
+	<p class="flash-notice flash"><%= notice %></p>
+<% end %>
+
+<div class="wrapper">
+	<h3 class="subheader">Create a room</h3>
+	<%= render partial: "/rooms/form", locals: {room: @room} %>
+</div>
+
+<div class="wrapper">
+	<h3 class="subheader">or</h3>
+</div>
+
+<div class="wrapper">
+	<h3 class="subheader">Find your room</h3>
+	<%= render partial: "/rooms/search_form" %>
+</div>

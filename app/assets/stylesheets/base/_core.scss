@@ -1,0 +1,42 @@
+/* --------------------------------------------------
+General Styling
+-------------------------------------------------- */
+html {
+	height: 100%;
+	@extend .group;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-tap-highlight-color: transparent;
+	background-color: #DDFFE6;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+*, *:after, *:before {
+	-webkit-box-sizing: border-box !important; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box !important;    /* Firefox, other Gecko */
+	box-sizing: border-box !important;         /* Opera/IE 8+ */
+	&:focus { outline: none; }
+}
+
+.left { float: left !important; }
+.right { float: right !important; }
+.hidden { display: none; }
+
+
+/*---------------------------------------------------
+Hacks
+---------------------------------------------------*/
+.group:after {
+	display: table;
+	content: "";
+	clear: both;
+}
+
+.clear { clear: both; }

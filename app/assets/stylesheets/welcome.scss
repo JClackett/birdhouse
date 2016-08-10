@@ -1,0 +1,26 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@include bem-block(topbar) {
+	background-color: $white;
+	width: 100%;
+	text-align: center;
+	color:$grey5;
+	
+	@include bem-element(header) {
+		margin: 0;
+		padding: 20px;
+	}
+}
+
+@include bem-block(subheader) {
+	@include font-size(30);
+	color:$grey4;
+}
+
+@include bem-block(wrapper) {
+	width: 100%;
+	text-align: center;
+	padding: 30px  30%,
+	
+}
