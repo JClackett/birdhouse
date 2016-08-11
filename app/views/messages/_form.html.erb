@@ -2,8 +2,7 @@
 
   <%= f.hidden_field :room_id, value: room.id %>
 
-  <%= f.label :content, "enter message here" %>
-  <%= f.text_field :content, autocomplete: :off %>
-  <%= f.button "Submit", type: 'submit' %>
+  <%= f.text_field :content, autocomplete: :off , placeholder: "Type a message..." ,class: "new_message__field"%>
+  <%= f.button "send", type: 'submit' ,class: "new_message__submit" %>
 
 <% end %>

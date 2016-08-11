@@ -12,8 +12,33 @@ App.room = App.cable.subscriptions.create({
 
 	received: function(data) {
 		$('#messages').append(data.message);
-		document.querySelector('#message_content').value= "";
+		$('#messages').animate({scrollTop: $('#messages').prop("scrollHeight")}, 500);
 	},
 });
 
 
+$(document).ready(function() {
+	// Scoll to bottom of message pane on page load
+	$('#messages').animate({scrollTop: $('#messages').prop("scrollHeight")}, 500);
+
+	// Checks if there was a mesage and if so, clears the field, then scrolls to bottom
+	$('#new_message').on ('submit', function(){
+		event.preventDefault();
+		// make sure there is content
+		if ($('#new_message [name="message[content]"]').val() === ""){
+			return false;
+		}
+
+		$.ajax({
+			url: this.action,
+			data: $(this).serialize(),
+			method: "post"
+		}).done( function(res){
+			// reset user input to empty
+			$('#new_message [name="message[content]"]').val("");
+		});
+
+		$('#messages').animate({scrollTop: $('#messages').prop("scrollHeight")}, 500);
+	});
+
+});

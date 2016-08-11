@@ -1,3 +1,5 @@
-<div class="message">
-	<p><%= message.content %><br><%= message.user.name %></p>
+<div class="message <%="message--user"  if current_user == message.user %> ">
+	<p class="message__content"><%= message.content %></p>
+	<p class="message__owner"><%= message.user.name %></p>
 </div>
+

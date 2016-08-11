@@ -1,3 +1,104 @@
 // Place all the styles related to the rooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------
+   Messages
+------------------------------------------------------------------------------------------------------------------------------------------------------ */
+@include bem-block(messages) {
+	height:82vh;
+	width: 400px;
+	background-color: #F6F7F9;
+	padding: 10px;
+	overflow: auto;
+}
+
+@include bem-block(message) {
+	text-align: right;
+	margin-top: 10px;
+	background-color: $blue2;
+	border-radius: 28px;
+	margin-left: 50%;
+	
+	@include bem-element(content) {
+		@include font-size(14);
+		padding: 5px 20px 0px 20px;
+		color: $white;
+		margin: 0;
+	}
+
+	@include bem-element(owner) {
+		@include font-size(10);
+		padding:  0px 20px 5px 20px;
+		margin: 0;
+		color: $white;
+	}
+}
+
+@include bem-block(message, user) {
+	text-align: left;
+	margin-right: 50%;
+	margin-left: 0;
+	background-color: $blue3;
+}
+
+@include bem-block(new_message) {
+	width: 400px;
+	background-color: $white;
+	height: 8vh;
+	border: 1px solid $greyE;
+	
+	
+	@include bem-element(field) {
+		height: 100%;
+		width: 80%;
+		border: none;
+		padding: 0;
+		padding-left: 20px;
+		@include font-size(16);
+		outline:none;
+		float: left;
+		margin: 0;
+		
+		
+	}	
+	.new_message__field::-webkit-input-placeholder { 
+		@include font-size(16);
+	}
+
+	@include bem-element(submit) {
+		width: 20%;
+		margin: 0;
+		padding: 0;
+		height: 100%;
+		color: $white;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		background-color: $brown1;
+		background-clip: padding-box;
+		border: none;
+		@include font-size(18);
+		letter-spacing: 1px;
+		font-variant: small-caps;
+	
+	}
+}
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------
+   Users
+------------------------------------------------------------------------------------------------------------------------------------------------------ */
+@include bem-block(users) {
+	float: right;
+}
+
+@include bem-block(user) {
+	margin-right: 30px;
+	
+	@include bem-element(name) {
+		@include font-size(20);
+	}
+}
+

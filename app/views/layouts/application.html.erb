@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Birdhouse</title>
-    <%= csrf_meta_tags %>
+	<head>
+		<title>Birdhouse</title>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= action_cable_meta_tag %>
+		<%= csrf_meta_tags %>
 
-  </head>
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+		<%= action_cable_meta_tag %>
 
-  <body>
-    <%= yield %>
-  </body>
+		<link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+
+	</head>
+
+	<body>
+		<%= yield %>
+	</body>
 </html>

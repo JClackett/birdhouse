@@ -16,10 +16,16 @@ class RoomsController < ApplicationController
 	# POST /rooms
 	def create
 		@room = Room.new(room_params)
+
 		if @room.save
-			redirect_to new_room_user_path(@room), notice: 'Room was successfully created.'
+			unless !!session[:user_id]
+				redirect_to new_room_user_path(@room) , notice: 'You must be logged in to view that page'
+			    
+			else
+				redirect_to @room, notice: 'Room was successfully created.'
+			end
 		else
-			render :new 
+			redirect_to root_path, notice: 'Try again!'
 		end
 	end
 

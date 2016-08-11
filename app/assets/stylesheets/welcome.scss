@@ -4,12 +4,14 @@
 @include bem-block(topbar) {
 	background-color: $white;
 	width: 100%;
+	height: 10vh;
 	text-align: center;
+	border-bottom:2px solid $greyE;
 	color:$grey5;
 	
 	@include bem-element(header) {
 		margin: 0;
-		padding: 20px;
+		line-height: 10vh;
 	}
 }
 

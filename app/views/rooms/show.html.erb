@@ -1,12 +1,16 @@
-<p>
-  <strong>Name:</strong>
-  <%= @room.name %>
-</p>
-
-
-
-<div id="messages">
+<div class="topbar">
+	<h1 class="topbar__header">Welcome to <%= @room.name %></h1>
+</div>
+<div id="messages" class="messages">
 	<%= render @messages %>
 </div>
 
+
 <%= render partial: "/messages/form", locals: {room: @room, message: @message} %>
+
+
+
+
+<!-- <div id="users" class="users">
+	<%#= render partial: "/users/user" %>
+</div> -->
